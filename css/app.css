@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Serif+Khmer:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*  */
+:root {
+  --color-success-dark: #117a65;
+  --color-success: #2ecc71;
+  --color-white: #fdfefe;
+  --color-primary: #3498db;
+  --color-warning: #f1c40f;
+  --color-dark: #212f3c;
+  --color-slate: #f8f9f9;
+  --color-slate-200: #bdc3c7;
+
+  /* font */
+  --font-kulen: "Koulen", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-noto-serif: "Noto Serif Khmer", serif;
+
+  /* size */
+  --size-logo: 60px;
+  --size-sumenu: 170px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  text-decoration: none;
+  font-family: var(--font-kulen);
+  list-style: none;
+}
+
+body,
+html {
+  min-width: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background: var(--color-slate);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+}
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-dark);
+  box-shadow: 0px 2px 8px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.header-app {
+  width: calc(100% - 30%);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-menu-on {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.btn-menu{
+  border: none;
+  background-color: transparent;
+  color: white;
+  display: none;
+}
+.menu-on{
+  /* visibility: visible; */
+  display: flex;
+}
+.menu-on.active{
+  /* visibility: hidden; */
+  display: none;
+}
+.menu-off{
+  /* visibility: hidden; */
+  display: none;
+}
+.menu-off.active{
+  /* visibility: visible; */
+  display: flex;
+}
+.header-logo {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+.header-logo > .logo {
+  width: var(--size-logo);
+  height: var(--size-logo);
+  border-radius: 100px;
+  object-fit: cover;
+}
+.header-logo {
+  color: white;
+  text-shadow: 0px 2px 5px var(--color-primary);
+}
+.header-logo .title > p {
+  font-size: 14px;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  /* color: var(--color-white); */
+}
+.nav-link > li {
+  position: relative;
+}
+.nav-link > li > .nav-items {
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  /* z-index: 1; */
+}
+.svg-arrow-rotate {
+  width: 15px;
+}
+.nav-items:hover .svg-arrow-rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link > li > .nav-items > p,
+svg {
+  z-index: 4;
+}
+.span-bar {
+  background-color: var(--color-success-dark);
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+  z-index: 1;
+}
+.nav-items:hover .span-bar {
+  width: 100%;
+}
+
+.nav-active .span-bar {
+  width: 100%;
+}
+
+/* Block Submenu */
+.submenu {
+  visibility: hidden;
+  /* opacity: 0; */
+  /* pointer-events: none; */
+  /* transform: translateY(10px); */
+  /* transition: all 0.3s ease-in-out; */
+  position: absolute;
+  /* top: 100%; */
+  left: 0;
+  background-color: var(--color-success-dark);
+  flex-direction: column;
+  width: var(--size-sumenu);
+  height: 70px;
+  padding: 10px 0;
+  z-index: 12;
+  border-radius: 3px;
+  box-shadow: 0px 5px 10px rgb(207, 207, 207);
+}
+
+.nav-link > li:hover .submenu {
+  /* visibility: visible; */
+  opacity: 1;
+  /* pointer-events: auto; */
+  /* transform: translateY(0); */
+}
+
+.submenu > li > a {
+  padding: 5px 10px;
+  white-space: normal;
+  color: white;
+  width: 100%;
+}
+
+.submenu > li > a:hover {
+  background: #8f8f8f;
+}
+
+
+/* Main Content */
+.main-content{
+  /* flex: ; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+}
+.main-content> .container{
+  width: calc(100% - 30%);
+  /* height: 700vh; */
+  background: var(--color-white);
+  padding: 15px;
+  /* border: 1px solid var(--color-success-dark); */
+  box-shadow: 0px 3px 10px rgb(226, 226, 226);
+}
+
+/* ============ Footer ======== */
+.footer {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-dark); /* Example: #222 */
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.footer > .footer-content {
+  width: 70%; /* Same as: calc(100% - 30%) */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  /* background: #117a65; Green background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Logo + Contact + Social Container */
+.footer-content-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* Logo Image */
+.footer-content-logo > div > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-content-logo>.partners{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-content-logo>.partners>p{
+  font-family: var(--font-noto-serif);
+}
+
+.footer-content-logo>.partners> .image-list{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+   gap: 5px;
+   margin-top: 10px;
+}
+.footer-content-logo>.partners> .image-list>a>img{
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+/*  */
+.address-box{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-content>.address-box>div> p{
+  font-family: var(--font-noto-serif);
+}
+/* Responsvie Web app */
+/* 🖥️ Desktop (default styles) */
+/* You usually define base styles here, outside of media queries */
+
+/* 📱 Phone: max 600px */
+@media screen and (max-width: 700px) {
+  .header-app {
+    width: 100%;
+  }
+  .header-app {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header-menu-on{
+    justify-content: space-between;
+    width: 100%;
+  }
+  .btn-menu{
+    display: flex;
+  }
+  .nav-link {
+    height: 0;
+    margin-top: 0px;
+    flex-direction: column;
+    align-items: start;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+  }
+  .nav-link.active{
+    height: auto;
+     margin-top: 20px;
+  }
+
+  /*  */
+  .main-content> .container{
+    width: 100%;
+  }
+
+  .footer > .footer-content {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+/* 📱 Tablet: 601px to 992px */
+@media screen and (min-width: 701px) and (max-width: 992px) {
+  /*  */
+  .header-app {
+    width: 100%;
+  }
+  
+}
+
+/* 🖥️ Desktop: 993px and up */
+@media screen and (min-width: 993px) {
+  /*  */
+}

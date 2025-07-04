@@ -1,0 +1,209 @@
+:root {
+  --font-size-16: 16px;
+}
+
+.show_info {
+  margin: 40px 0px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: #b944d4;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 68, 212, 1) 0%,
+    rgba(87, 108, 199, 1) 37%,
+    rgba(114, 174, 208, 1) 73%,
+    rgba(83, 237, 234, 1) 100%
+  );
+  color: white;
+  transition: all 0.4s ease-in-out;
+  transform: translateY(0px);
+  box-shadow: 0px 5px 10px rgb(190, 190, 190);
+  border-radius: 5px;
+}
+.show_info:hover {
+  transform: translateY(-5px);
+}
+
+.app-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Block Small Box */
+.app-box > .box-small {
+  width: 100%;
+  background-color: var(--color-slate);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  transform: perspective(500px);
+}
+
+.app-box > .box-small:hover {
+  transform: perspective(500px) rotateX(-5deg);
+}
+
+.app-box > .box-small > img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px 10px 0px 0px;
+}
+.app-box > .box-small > div {
+  margin: 10px;
+}
+.app-box > .box-small > h4 {
+  text-align: center;
+  margin: 10px;
+  color: var(--color-success-dark);
+}
+.app-box > .box-small > div > p {
+  font-family: var(--font-noto-serif);
+  margin-top: 10px;
+  font-size: var(--font-size-16);
+}
+
+.app-box > .box-small > div > ul {
+  padding-left: 1.2em; /* good */
+  list-style-type: none; /* hide default bullets */
+  font-size: var(--font-size-16);
+}
+
+.app-box > .box-small > div > ul > li {
+  font-family: var(--font-noto-serif);
+  margin-top: 10px;
+  /* REMOVE list-style here */
+}
+
+.app-box > .box-small > div > ul > li::before {
+  content: "-"; /* custom dash bullet */
+  color: black;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Block Section to List show info... */
+.list-show-info > hr {
+  margin: 10px 0px;
+}
+/*  */
+.list-show-info > li > .button_under_list {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.list-show-info > li > .button_under_list:hover {
+  background: rgb(235, 235, 235);
+}
+
+/*  */
+.list-show-info > li > div > h4 {
+  font-weight: 400;
+  color: var(--color-success-dark);
+}
+.list-show-info > li > p {
+  margin-top: 5px;
+  font-weight: 400;
+  font-family: var(--font-noto-serif);
+}
+
+.list-show-info > li > .button_under_list > button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.list-show-info > li > .button_under_list > button > svg {
+  color: rgb(15, 167, 255);
+  width: 24px;
+  height: 24px;
+  /* border-radius: 50px; */
+  background-color: transparent;
+}
+.add {
+  width: 24px;
+  height: 24px;
+  /* opacity: 1; */
+  pointer-events: auto;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0%);
+  position: absolute;
+}
+.sub {
+  width: 24px;
+  height: 24px;
+  /* opacity: 1; */
+  pointer-events: auto;
+  transition: all 0.3s ease-in-out;
+}
+.add.hide {
+  transform: translateY(100%);
+}
+.sub.hide {
+  transform: translateY(-100%);
+}
+/* Block Under List app */
+.under_list {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+  background-color: transparent;
+  font-family: var(--font-noto-serif);
+}
+.under_list > p {
+  font-family: var(--font-noto-serif);
+  margin-top: 5px;
+}
+.under_list > ul > li {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--font-noto-serif);
+  font-size: var(--font-size-16);
+}
+
+.under_list > ul > li::before {
+  content: "–"; /* dash or any custom symbol */
+  position: absolute;
+  left: 0;
+  color: #333;
+}
+
+/*  */
+@media screen and (min-width: 700px) {
+  .app-box {
+    grid-template-rows: repeat(1, 1fr);
+  }
+}
+
+/* 📱 Tablet: 601px to 992px */
+@media screen and (min-width: 701px) and (max-width: 992px) {
+  /*  */
+  .app-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 🖥️ Desktop: 993px and up */
+@media screen and (min-width: 993px) {
+  /*  */
+  .app-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
