@@ -1,0 +1,53 @@
+.splide__slide {
+  height: 400px;
+  background-color: rebeccapurple;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.splide__slide{
+    margin: 0px 5px;
+}
+
+/* Previous arrow button */
+.splide__arrow--prev {
+  background-color: #ff69b4; /* pink background */
+  border-radius: 50%;        /* make it round */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Next arrow button */
+.splide__arrow--next {
+  background-color: #ff1493; /* deep pink background */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow icon color */
+.splide__arrow svg {
+  fill: white;    /* change icon color */
+  width: 20px;
+  height: 20px;
+}
+
+/* Hover effects */
+.splide__arrow--prev:hover {
+  background-color: #ff85c1; /* lighter pink on hover */
+}
+
+.splide__arrow--next:hover {
+  background-color: #ff5aa9; /* lighter deep pink on hover */
+}

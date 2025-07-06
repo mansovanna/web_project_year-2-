@@ -210,7 +210,7 @@ svg {
   padding: 10px;
 }
 .main-content> .container{
-  width: calc(100% - 30%);
+  width: calc(100% - 20%);
   /* height: 700vh; */
   background: var(--color-white);
   padding: 15px;
@@ -291,7 +291,7 @@ svg {
 /* You usually define base styles here, outside of media queries */
 
 /* 📱 Phone: max 600px */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 480px) {
   .header-app {
     width: 100%;
   }
@@ -327,19 +327,32 @@ svg {
   .footer > .footer-content {
     flex-direction: column;
     width: 95%;
+    padding: 0;
   }
 }
 
-/* 📱 Tablet: 601px to 992px */
-@media screen and (min-width: 701px) and (max-width: 992px) {
+
+/* 📱 Tablet: 480px to 768px */
+@media screen and (min-width: 480px) and (max-width: 768px) {
   /*  */
   .header-app {
+    width: 100%;
+  }
+  .main-content>.container{
     width: 100%;
   }
   
 }
 
-/* 🖥️ Desktop: 993px and up */
-@media screen and (min-width: 993px) {
+/* 🖥️ Labtop: 768px to 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px)  {
   /*  */
+  .main-content>.container{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  /*  */
+  
 }
